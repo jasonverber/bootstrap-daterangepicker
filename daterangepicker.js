@@ -1556,7 +1556,7 @@
             var start = moment(this.container.find('input[name="daterangepicker_start"]').val(), this.locale.format);
             var end = moment(this.container.find('input[name="daterangepicker_end"]').val(), this.locale.format);
 
-            if (start.isValid() && end.isValid()) {
+            if ((start == null || start.isValid()) && end.isValid()) {
 
                 if (isRight && end.isBefore(start))
                     start = end.clone();
